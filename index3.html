@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+        </head>
+        <body>
+            <script>
+                
+                result = findNextSquare(121);
+                alert (result);
+//-------------------------------------------------------------------------------------------------------
+                function findNextSquare(sq) {
+                return Math.sqrt(sq)%1? -1 : Math.pow(Math.sqrt(sq)+1,2);
+                }       
+//--------------------------------------------------------------------------------------------------------                
+                // function findNextSquare(sq) {
+                //     var x = Math.sqrt(sq);// Return the next square if sq if a perfect square, -1 otherwise
+                //     alert (x);
+                //     if (Math.ceil(x) !== x) {
+                //         return -1
+                //     }else{
+                //         return Math.pow((x+1),2);
+                //     }
+                // }
+            </script>
+        </body>
+    </html>

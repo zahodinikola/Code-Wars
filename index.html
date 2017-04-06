@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+ //-------------------------------------------------------------------------------------------------       
+        result = descendingOrder(2345353);
+        alert (result);
+//-------------------------------------------------------------------------------------------------
+        function descendingOrder(n) {
+        return n.digits().sort().reverse().undigits();
+        }
+
+        Number.prototype.digits = function() {
+        const result = [];
+        let n = this;
+        do {
+            result.unshift(n % 10);
+            n = Math.floor(n / 10);
+        } while(n);
+        return result;
+        };
+
+        Array.prototype.undigits = function() {
+        return this.reduce((n, d) => n * 10 + d, 0);
+        };  
+//----------------------------------------------------------------------------------------------------
+        // function descendingOrder(n){
+        // return +(n + '').split('').sort(function(a,b){ return b - a }).join('');
+        // }
+//-----------------------------------------------------------------------------------------------
+            // function descendingOrder(n){
+            // return parseInt(String(n)
+            //     .split('')
+            //     .sort()
+            //     .reverse()
+            //     .join(''));
+            // }
+//-------------------------------------------------------------------------------------------------
+        // function descendingOrder(n){
+        //     //get number and put it in an array
+        //     var string = n.toString();
+        //     var array = string.split("");
+        //     //alert (array);
+        //     bubbleSort(array);
+        //     //output array as a string or convert it to an integer
+        //     return parseInt(array.join(""));
+        //     //alert (msg);
+
+        //     //go through arry and sort it in descending order
+        //     function bubbleSort(array){
+        //         var startIndex = 0;
+        //         var endIndex = array.length - 1;
+        //        // alert (startIndex + " " + endIndex);
+        //         bubble(startIndex, endIndex);
+                
+        //         function swap(a, b){
+        //             var temp;
+        //             temp = array[a];
+        //             array[a] = array[b];
+        //             array[b] = temp;
+        //         }
+                
+        //         function bubble(i, k){
+        //             if (i===k) return;
+        //             for (var j = k; j > i; j -= 1){
+        //                 if (array[j] > array[j-1]){
+        //                 swap (j, j-1);
+        //                 }
+        //             }
+        //             bubble (i+1,k);
+        //         } 
+        //     }
+        // }
+    </script>
+</body>
+</html>
