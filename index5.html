@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        alert(filter_list([1, 2, 4, "44", "eerer", 44]));
+        
+        function filter_list(l) {
+             return l.filter(function(v) {return typeof v == 'number'})
+        }
+
+        // function filter_list(l) {
+        // // Return a new array with the strings filtered out
+        // var result = [];
+        // for (var i = 0; i < l.length; i++){
+        //     if (typeof l[i] === "number") result.push(l[i]);
+        // }
+        // return result;
+        // }
+    </script>
+</body>
+</html>

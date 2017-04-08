@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var msg = addBinary(12, 3);
+        alert(msg);
+        
+        // function addBinary(a,b){
+        //     return (a+b).toString(2)
+        // }
+
+        function addBinary(a,b) {
+            var resultBin = "";
+            var resultInt = a + b;
+            var ramain;
+            while (resultInt > 0){
+                if (resultInt === 0) return "0";
+                remain = resultInt % 2;
+                resultBin += remain;
+                resultInt = Math.floor(resultInt/2);
+                }
+           
+            return resultBin.split("").reverse().join("");
+                
+        }
+    </script>
+</body>
+</html>
