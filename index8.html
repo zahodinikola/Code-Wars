@@ -11,9 +11,14 @@
         msg = isSquare(9);
         alert (msg);
         
-        function isSquare(n) {
-            return Math.sqrt(n) % 1 === 0;
+        var isSquare = function(n){
+            n = Math.sqrt(n);
+            return ~~n === n;
         }
+
+        // function isSquare(n) {
+        //     return Math.sqrt(n) % 1 === 0;
+        // }
         // var isSquare = function(n){
         //     return (n < 0)?false:(Math.sqrt(n)%1)?false:true;
         // }
