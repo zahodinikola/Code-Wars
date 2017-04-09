@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        msg = alphabetPosition("hgpgahgapioerig.ergsdg.a");
+        alert(msg);
+        
+        // function alphabetPosition(text) {
+        //     return text.match(/[a-zA-Z]/g).map( (el) => el.toLowerCase().charCodeAt() - 96 ).join(' ');
+        // }
+        
+        // let alphabetPosition = (text) => text.toUpperCase().replace(/[^A-Z]/g, '').split('').map(ch => ch.charCodeAt(0) - 64).join(' ');
+        
+        function alphabetPosition(text) {
+            var arr = text.toLowerCase().match(/[a-z]|[A-Z]/g);
+            var arr2 = [];
+            alert(arr);
+            for(var i=0; i < arr.length; i++){
+            arr2[i] = arr[i].charCodeAt(0) - 96;
+            }
+            return arr2.join(" ");
+        }
+
+        
+        // function alphabetPosition(text) {
+        // return text
+        //     .toLowerCase()
+        //     .replace(/[^a-z]/g,'')
+        //     .replace(/./g, c => c + " ")
+        //     .replace(/[a-z]/g, c => c.charCodeAt(0) - 96)
+        //     .trim();    
+        // }
+
+        
+        // function alphabetPosition(text) {
+        //     var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        //     return text.toLowerCase().split('')
+        //     .filter( letter => {
+        //         let index = alphabet.indexOf(letter);
+        //         return index > -1;
+        //     }  )
+        //     .map( letter => alphabet.indexOf(letter) + 1 )
+        //     .join(' ')
+        //     }
+
+
+        // function alphabetPosition(text) {
+        //     return text
+        //         .toUpperCase()
+        //         .match(/[a-z]/gi)
+        //         .map( (c) => c.charCodeAt() - 64)
+        //         .join(' ');
+        //     }
+
+
+        
+    </script>
+</body>
+</html>
