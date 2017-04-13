@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+    <meta charset = "utf-8">
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+</head>
+<body>
+    <script>
+    
+    // Description:
+
+    // Write a function that takes an (unsigned) integer as input, and returns the number of bits that are equal
+    // to one in the binary representation of that number.
+
+    // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+    // ALGORITHMSBITSBINARY
+    //----------------------------------------------------------------
+    // function countBits(n) {
+    // for(c=0;n;n>>=1)c+=n&1
+    // return c;
+    // }
+    //-----------------------------------------------------------------
+    // countBits = n => n.toString(2).split('0').join('').length;
+    //---------------------------------------------------------------------
+    // var countBits = function(n)
+    // {
+    // a = n.toString(2).match(/1/g);
+    // return a == null ? 0 : a.length;
+    // };
+
+    
+    
+    var countBits = function(n) {
+    // Program Me
+    return n
+        .toString(2)
+        .replace(/0+/g, "")
+        .length;
+    };
+
+
+    msg = countBits(5);
+    alert(msg);
+
+    </script>
+</body>
+</html>
