@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+            
+            //             For building the encrypted string:
+            // Take every 2nd char from the string, then the other chars,
+            // that are not every 2nd char, and concat them as new String.
+            // Do this n times!
+
+            // Examples:
+
+            // "This is a test!", 1 -> "hsi  etTi sats!"
+            // "This is a test!", 2 -> "hsi  etTi sats!" -> "s eT ashi tist!"
+            // Write two methods:
+
+            // function encrypt(text, n)
+            // function decrypt(encryptedText, n)
+            // For both methods:
+            // If the input-string is null or empty return exactly this value!
+            // If n is <= 0 then return the input text.
+            
+            var text = "This is a test!";
+            var n = 1;
+            var message = encrypt(text, n)
+            alert(message);
+            var message2 = decrypt(message, n);
+            alert(message2);
+            
+            function encrypt(text, n) {
+                var result = text;
+                if (text === null) return null;
+                for (var i = 1; i <= n; i++) {
+                    var encrypted = "";
+                    for (var j = 2; j > 0; j--){
+                        for (var k = j; k <= result.length; k+=2) {
+                            encrypted = encrypted + result[k-1];
+                        }
+                    }
+                result = encrypted;
+                }
+                return result;
+            }
+
+            function decrypt(encryptedText, n) {
+                var result = encryptedText;
+                if (encryptedText === null) return null;
+                for (var i = 1; i <= n; i++) {
+                    var index = 0;
+                    var decrypted = "";
+                    for (var k = 1; k <= Math.ceil(result.length / 2); k++) {
+                        for (var j = 1; j >= 0; j--) {
+                            index = k + j * Math.floor(result.length / 2);
+                            if (j === 0 && index > Math.floor(result.length / 2)) continue;
+                            decrypted = decrypted + result[index - 1];
+                        }
+                    }
+                    result = decrypted;
+                }
+                return result;
+            }
+
+
+    </script>
+</body>
+</html>
