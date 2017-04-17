@@ -34,38 +34,87 @@
             var message2 = decrypt(message, n);
             alert(message2);
             
+            
             function encrypt(text, n) {
-                var result = text;
-                if (text === null) return null;
-                for (var i = 1; i <= n; i++) {
-                    var encrypted = "";
-                    for (var j = 2; j > 0; j--){
-                        for (var k = j; k <= result.length; k+=2) {
-                            encrypted = encrypted + result[k-1];
-                        }
-                    }
-                result = encrypted;
+            console.log(text, n);
+            if (!text || n <= 0) return text; 
+            while (n--) {
+                let ans = '';
+                for (let i = 1; i < text.length; i += 2) {
+                ans += text[i];
                 }
-                return result;
+                for (let i = 0; i < text.length; i += 2) {
+                ans += text[i];
+                }
+                text = ans;
+            }
+            return text;
             }
 
             function decrypt(encryptedText, n) {
-                var result = encryptedText;
-                if (encryptedText === null) return null;
-                for (var i = 1; i <= n; i++) {
-                    var index = 0;
-                    var decrypted = "";
-                    for (var k = 1; k <= Math.ceil(result.length / 2); k++) {
-                        for (var j = 1; j >= 0; j--) {
-                            index = k + j * Math.floor(result.length / 2);
-                            if (j === 0 && index > Math.floor(result.length / 2)) continue;
-                            decrypted = decrypted + result[index - 1];
-                        }
-                    }
-                    result = decrypted;
+            if (!encryptedText || n <= 0) return encryptedText;
+            const ans = new Array(encryptedText.length);
+            while (n--) {
+                let j = 0;
+                for (let i = 1; i < ans.length; i += 2) {
+                ans[i] = encryptedText[j++];
                 }
-                return result;
+                for (let i = 0; i < ans.length; i += 2) {
+                ans[i] = encryptedText[j++];
+                }
+                encryptedText = ans.join('');
             }
+            return encryptedText;
+            }
+
+            //----------------------------------------------------------------
+            // function encrypt(text, n) {
+            //     for (let i = 0; i < n; i++) {
+            //         text = text && text.replace(/.(.|$)/g, '$1') + text.replace(/(.)./g, '$1') 
+            //     }
+            // return text
+            // }
+
+            // function decrypt(text, n) {
+            // let l = text && text.length / 2 | 0
+            //     for (let i = 0; i < n; i++) {
+            //         text = text.slice(l).replace(/./g, (_, i) => _ + (i < l ? text[i] : ''))
+            //     }
+            //     return text
+            // }
+            //----------------------------------------------------------------
+            // function encrypt(text, n) {
+            //     var result = text;
+            //     if (text === null) return null;
+            //     for (var i = 1; i <= n; i++) {
+            //         var encrypted = "";
+            //         for (var j = 2; j > 0; j--){
+            //             for (var k = j; k <= result.length; k+=2) {
+            //                 encrypted = encrypted + result[k-1];
+            //             }
+            //         }
+            //     result = encrypted;
+            //     }
+            //     return result;
+            // }
+
+            // function decrypt(encryptedText, n) {
+            //     var result = encryptedText;
+            //     if (encryptedText === null) return null;
+            //     for (var i = 1; i <= n; i++) {
+            //         var index = 0;
+            //         var decrypted = "";
+            //         for (var k = 1; k <= Math.ceil(result.length / 2); k++) {
+            //             for (var j = 1; j >= 0; j--) {
+            //                 index = k + j * Math.floor(result.length / 2);
+            //                 if (j === 0 && index > Math.floor(result.length / 2)) continue;
+            //                 decrypted = decrypted + result[index - 1];
+            //             }
+            //         }
+            //         result = decrypted;
+            //     }
+            //     return result;
+            // }
 
 
     </script>
