@@ -48,7 +48,9 @@
         var titleAr = title.toLowerCase().split(' '),
             minorWordsAr = minorWords ? minorWords.toLowerCase().split(' ') : [];
             
-        return titleAr.map(function(e, i){return minorWordsAr.indexOf(e) === -1 || i === 0 ? e.capitalize() : e })
+        return titleAr.map(function(e, i){
+                                return minorWordsAr.indexOf(e) === -1 || i === 0 ? e.capitalize() : e 
+                                })
                         .join(' ');
         }
         
